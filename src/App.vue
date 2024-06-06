@@ -1,15 +1,16 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome a mi primer proyecto en Vue Andres Lugmaña App"/>
+  <Comtador>
+    
+  </Comtador>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Comtador from './components/Comtador.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Comtador
   }
 }
 </script>
