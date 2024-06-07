@@ -1,8 +1,8 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <Comtador>
-    
-  </Comtador>
+  <Comtador titulo="Estudiante" />
+  <Comtador titulo="Profesor"/>
+  <Comtador/>
 </template>
 
 <script>
@@ -10,8 +10,8 @@ import Comtador from './components/Comtador.vue'
 export default {
   name: 'App',
   components: {
-    Comtador
-  }
+    Comtador,
+  },
 }
 </script>
 
