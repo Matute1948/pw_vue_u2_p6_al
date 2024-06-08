@@ -9,11 +9,25 @@
 
 <script>
 export default {
-  props:['titulo','num'],
+  //props:['titulo','num'], 1 forma de declarar un props (basica)
+  props:{
+    titulo:String,
+    num:{
+      type: Number,
+      required: false,
+      default: 10,
+      validator(value)
+      {
+        /// tengo toda la programacion 
+        // return booleando 
+        return value>0;
+      }
+    }
+  },
   data(){
     return{
-      numero:5
-    }
+      numero: this.num,
+    };
   },
   methods:{
     calcularCuadrado(){

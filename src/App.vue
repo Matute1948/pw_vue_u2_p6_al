@@ -1,8 +1,8 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <Comtador titulo="Estudiante" />
-  <Comtador titulo="Profesor"/>
-  <Comtador/>
+  <Comtador titulo="Estudiante" num="3"/>
+  <Comtador titulo="Profesor" />
+  <Comtador :num="calcularValor()"/>
 </template>
 
 <script>
@@ -12,6 +12,11 @@ export default {
   components: {
     Comtador,
   },
+  methods:{
+    calcularValor(){
+      return 10+2;
+    }
+  }
 }
 </script>
 
