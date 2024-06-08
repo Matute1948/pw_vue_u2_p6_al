@@ -1,16 +1,14 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <Comtador titulo="Estudiante" num="3"/>
-  <Comtador titulo="Profesor" />
-  <Comtador :num="calcularValor()"/>
+  
+  <Preg></Preg>
 </template>
 
 <script>
-import Comtador from './components/Comtador.vue'
+import Preg from './components/Preg.vue';
 export default {
   name: 'App',
   components: {
-    Comtador,
+    Preg,
   },
   methods:{
     calcularValor(){
