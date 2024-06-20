@@ -1,14 +1,14 @@
 <template>
   
-  <Preg></Preg>
+  <PokemonPage/>
 </template>
 
 <script>
-import Preg from './components/Preg.vue';
+import PokemonPage from './pages/PokemonPage.vue';
 export default {
   name: 'App',
   components: {
-    Preg,
+    PokemonPage,
   },
   methods:{
     calcularValor(){
@@ -27,4 +27,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
 </style>

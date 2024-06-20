@@ -4,9 +4,9 @@
   <div class="pregunta-container">
   <input v-model="pregunta" type="text" placeholder="Hazme una pregunta hijo">
   <p>Recuerda terminar la pregunta con el signo de interrogacion (?)</p>
-  <div class="respuesta">
+  <div v-show="mensaje" class="respuesta">
     <h2>{{pregunta}}</h2>
-    <h1>{{respuesta}}</h1>
+    <h1>{{respuesta == 'yes'?'SI':"NO"}}</h1>
   </div>
 </div>
 </template>
@@ -18,15 +18,18 @@ export default {
       pregunta: null,
       respuesta: null,
       imag: null,
+      mensaje:false,
     }
   },
   watch:{
     //observador de la propiedad reactiva pregunta
      pregunta(value, oldValue){
+        this.mensaje =false;
         console.log({ value,oldValue })
         if(value.includes('?')) return; //Salgase del observador 
         //Consumir el API para obtener la respuesta
         this.obtenerRespuesta();
+        this.mensaje = true;
       },
   },
   methods:{
@@ -47,7 +50,9 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+/* Con la palabra scoped garantizaoms que estos estilos se apliquen solo a este componente :V */
+/* esto es una buena practica ya que solo afecta a este componenete */
 img, .oscuro{
   max-height: 100%;
   height: 100vh;
@@ -91,4 +96,6 @@ p{
 .respuesta{
   margin-top: 100px;
 }
+
+
 </style>
