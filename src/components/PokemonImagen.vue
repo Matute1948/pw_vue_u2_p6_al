@@ -1,7 +1,7 @@
 <template>
     <div class="pokemon-container">
-        <img v-show="mostrar" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/6.svg" alt="No cargo la imagen">
-        <img v-show="!mostrar" class="pokeNegro" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/6.svg" alt="No cargo la imagen">
+        <img v-show="mostrarPokemon" :src="imagenFuente" alt="No cargo la imagen">
+        <img v-show="!mostrarPokemon" class="pokeNegro" :src="imagenFuente" alt="No cargo la imagen">
     </div>
     
     
@@ -16,6 +16,22 @@ export default{
             mostrar: false,
         }
     },
+    props:{
+        idPokemon:{
+            type: Number,
+            required: true,
+        },
+        mostrarPokemon:{
+            type: Boolean,
+            required: true,
+        }
+    },
+    
+    computed:{
+        imagenFuente(){
+            return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${this.idPokemon}.svg`
+        } 
+    }
 }
 
 </script>
