@@ -1,7 +1,7 @@
 <template>
     <div class="opciones-container">
         <ul>
-            <li v-for="pokemon in pokemons" :key="pokemon.id">{{pokemon.name}}</li>
+            <li v-for="pokemon in pokemons" :key="pokemon.id" @click="$emit('seleccionPokemon',{ident: pokemon.id, nomb: pokemon.nombre, test:'esto es una preuba'})">{{pokemon.nombre}}</li>
         </ul>
     </div>
 </template>
@@ -29,6 +29,7 @@ li{
     border-radius: 5px;
     margin: 10px;
     width: 500px;
+    height: 15px;
     background-color: white;
     cursor: pointer;
     

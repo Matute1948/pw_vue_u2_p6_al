@@ -3,9 +3,6 @@
         <img v-show="mostrarPokemon" :src="imagenFuente" alt="No cargo la imagen">
         <img v-show="!mostrarPokemon" class="pokeNegro" :src="imagenFuente" alt="No cargo la imagen">
     </div>
-    
-    
-    
 </template>
 
 <script>
@@ -30,9 +27,9 @@ export default{
     computed:{
         imagenFuente(){
             return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${this.idPokemon}.svg`
-        } 
-    }
-}
+        },
+    },
+};
 
 </script>
 
@@ -42,14 +39,15 @@ export default{
     filter: brightness(0);
 }
 img{
-    height: 300px;
-    width: 300px;
-    position: absolute;
-    right: 40%;
+    height: 150px;
+    width: auto;
 }
 
 .pokemon-container{
-    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 200px;
 }
 
 
